@@ -15,26 +15,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-dot_data = tree.export_graphviz(clf_gini, out_file=None, 
-                              feature_names=X_train.columns,  
-                              class_names=y_train.unique(),  
-                              filled=True, rounded=True,  
-                              special_characters=True)
-
-graph = graphviz.Source(dot_data) 
-
-graph 
+from sklearn.metrics import accuracy_score
+print(f'acuraty = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%')
+print(f'dari data prediksi {correct.shape[0]} / {data_predic.shape[0]} * 100% = {"{:,.2f}".format((correct.shape[0]) / (data_predic.shape[0]) * 100)}%' )
 ------------------
 
 
 [0;31m[0m
 [0;31mNameError[0mTraceback (most recent call last)
-[0;32m<ipython-input-12-34de2d8e9e5d>[0m in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0;31m dot_data = tree.export_graphviz(clf_gini, out_file=None, 
-[0m[1;32m      2[0m                               [0mfeature_names[0m[0;34m=[0m[0mX_train[0m[0;34m.[0m[0mcolumns[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m                               [0mclass_names[0m[0;34m=[0m[0my_train[0m[0;34m.[0m[0munique[0m[0;34m([0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m                               [0mfilled[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m [0mrounded[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m                               special_characters=True)
+[0;32m<ipython-input-12-8e37075d9939>[0m in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0mmetrics[0m [0;32mimport[0m [0maccuracy_score[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mprint[0m[0;34m([0m[0;34mf'acuraty = {"{:,.2f}".format(accuracy_score(y_test, y_predic)*100)}%'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mprint[0m[0;34m([0m[0;34mf'dari data prediksi {correct.shape[0]} / {data_predic.shape[0]} * 100% = {"{:,.2f}".format((correct.shape[0]) / (data_predic.shape[0]) * 100)}%'[0m [0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'clf_gini' is not defined
+[0;31mNameError[0m: name 'y_predic' is not defined
 
