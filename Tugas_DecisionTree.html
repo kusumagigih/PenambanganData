@@ -161,7 +161,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="UTS.html">UTS</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Decision Tree pada data Iris</a></li>
 
-
 <li class="toctree-l1"><a class="reference internal" href="Tugas4.html">PERHITUNGAN MANUAL BACK PROPAGATION</a></li>
 </ul>
 
@@ -387,8 +386,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Decision Tree pada data Iris</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-decision-tree">Apa itu Decision Tree</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Decision Tree pada data Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-decision-tree">Apa itu Decision Tree</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-import-library-yang-dibutuhkan">Langkah 1 (Import Library yang dibutuhkan)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-import-data">Langkah 2 (Import Data)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-mengecek-nilai-yang-kosong-hilang-pada-data">Langkah 3 (Mengecek nilai yang kosong/hilang pada data)</a></li>
@@ -418,10 +417,10 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="decision-tree-pada-data-iris">
 <h1>Decision Tree pada data Iris<a class="headerlink" href="#decision-tree-pada-data-iris" title="Permalink to this heading">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="apa-itu-decision-tree">
-<h1>Apa itu Decision Tree<a class="headerlink" href="#apa-itu-decision-tree" title="Permalink to this heading">#</a></h1>
+<div class="section" id="apa-itu-decision-tree">
+<h2>Apa itu Decision Tree<a class="headerlink" href="#apa-itu-decision-tree" title="Permalink to this heading">#</a></h2>
 <p>Decision tree adalah algoritma machine learning yang menggunakan seperangkat aturan untuk membuat keputusan dengan struktur seperti pohon yang memodelkan kemungkinan hasil, biaya sumber daya, utilitas dan kemungkinan konsekuensi atau resiko. Konsepnya adalah dengan cara menyajikan algoritma dengan pernyataan bersyarat, yang meliputi cabang untuk mewakili langkah-langkah pengambilan keputusan yang dapat mengarah pada hasil yang menguntungkan.</p>
+</div>
 <div class="section" id="langkah-1-import-library-yang-dibutuhkan">
 <h2>Langkah 1 (Import Library yang dibutuhkan)<a class="headerlink" href="#langkah-1-import-library-yang-dibutuhkan" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -453,7 +452,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3d9e6289-5de8-4d40-b000-83812284709d">
+  <div id="df-93981251-2c0e-43a6-95c2-84e0635604da">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -573,7 +572,7 @@ document.write(`
 </table>
 <p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-3d9e6289-5de8-4d40-b000-83812284709d')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-93981251-2c0e-43a6-95c2-84e0635604da')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -624,12 +623,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-3d9e6289-5de8-4d40-b000-83812284709d button.colab-df-convert');
+          document.querySelector('#df-93981251-2c0e-43a6-95c2-84e0635604da button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-3d9e6289-5de8-4d40-b000-83812284709d');
+          const element = document.querySelector('#df-93981251-2c0e-43a6-95c2-84e0635604da');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -661,7 +660,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-fc628062-5bca-4871-a7a3-81453ff69a27">
+  <div id="df-90823108-236a-4d64-8725-488ebd52ae62">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -781,7 +780,7 @@ document.write(`
 </table>
 <p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-fc628062-5bca-4871-a7a3-81453ff69a27')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-90823108-236a-4d64-8725-488ebd52ae62')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -832,12 +831,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-fc628062-5bca-4871-a7a3-81453ff69a27 button.colab-df-convert');
+          document.querySelector('#df-90823108-236a-4d64-8725-488ebd52ae62 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-fc628062-5bca-4871-a7a3-81453ff69a27');
+          const element = document.querySelector('#df-90823108-236a-4d64-8725-488ebd52ae62');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -891,7 +890,7 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-003107db-d9ab-42dc-a792-68db3a3a998f">
+  <div id="df-f2e11cdd-cd50-4a10-9b66-76f295a4a8b2">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1011,7 +1010,7 @@ dtype: int64
 </table>
 <p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-003107db-d9ab-42dc-a792-68db3a3a998f')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f2e11cdd-cd50-4a10-9b66-76f295a4a8b2')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1062,12 +1061,12 @@ dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-003107db-d9ab-42dc-a792-68db3a3a998f button.colab-df-convert');
+          document.querySelector('#df-f2e11cdd-cd50-4a10-9b66-76f295a4a8b2 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-003107db-d9ab-42dc-a792-68db3a3a998f');
+          const element = document.querySelector('#df-f2e11cdd-cd50-4a10-9b66-76f295a4a8b2');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1341,8 +1340,8 @@ Accuracy on testing set (Gini): 1.000
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Decision Tree pada data Iris</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-decision-tree">Apa itu Decision Tree</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Decision Tree pada data Iris</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-decision-tree">Apa itu Decision Tree</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-import-library-yang-dibutuhkan">Langkah 1 (Import Library yang dibutuhkan)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-import-data">Langkah 2 (Import Data)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-mengecek-nilai-yang-kosong-hilang-pada-data">Langkah 3 (Mengecek nilai yang kosong/hilang pada data)</a></li>
