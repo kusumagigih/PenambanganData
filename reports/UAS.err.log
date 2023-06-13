@@ -1,0 +1,93 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+naive_bayes_classifier = GaussianNB()
+naive_bayes_classifier.fit(X_train, y_train)
+Y_pred_nb = naive_bayes_classifier.predict(X_test)
+
+cm = confusion_matrix(y_test, Y_pred_nb)
+
+print('Confusion matrix for Gaussian Naive Bayes\n',cm)
+
+naive_bayes_accuracy = round(100 * accuracy_score(y_test, Y_pred_nb), 2)
+model_accuracy['Gaussian Naive Bayes'] = naive_bayes_accuracy
+
+naive_bayes_precision = round(100 * precision_score(y_test, Y_pred_nb, average = 'weighted'), 2)
+model_precision['Gaussian Naive Bayes'] = naive_bayes_precision
+
+naive_bayes_recall = round(100 * recall_score(y_test, Y_pred_nb, average = 'weighted'), 2)
+model_recall['Gaussian Naive Bayes'] = naive_bayes_recall
+
+print('The accuracy of this model is {} %.'.format(naive_bayes_accuracy))
+print('The precision of this model is {} %.'.format(naive_bayes_precision))
+print('The recall of this model is {} %.'.format(naive_bayes_recall))
+------------------
+
+
+[0;31m[0m
+[0;31mValueError[0mTraceback (most recent call last)
+[0;32m<ipython-input-23-6a425da1d1f1>[0m in [0;36m<cell line: 2>[0;34m()[0m
+[1;32m      1[0m [0mnaive_bayes_classifier[0m [0;34m=[0m [0mGaussianNB[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mnaive_bayes_classifier[0m[0;34m.[0m[0mfit[0m[0;34m([0m[0mX_train[0m[0;34m,[0m [0my_train[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mY_pred_nb[0m [0;34m=[0m [0mnaive_bayes_classifier[0m[0;34m.[0m[0mpredict[0m[0;34m([0m[0mX_test[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[1;32m      5[0m [0mcm[0m [0;34m=[0m [0mconfusion_matrix[0m[0;34m([0m[0my_test[0m[0;34m,[0m [0mY_pred_nb[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/naive_bayes.py[0m in [0;36mfit[0;34m(self, X, y, sample_weight)[0m
+[1;32m    265[0m         [0mself[0m[0;34m.[0m[0m_validate_params[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    266[0m         [0my[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_validate_data[0m[0;34m([0m[0my[0m[0;34m=[0m[0my[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 267[0;31m         return self._partial_fit(
+[0m[1;32m    268[0m             [0mX[0m[0;34m,[0m [0my[0m[0;34m,[0m [0mnp[0m[0;34m.[0m[0munique[0m[0;34m([0m[0my[0m[0;34m)[0m[0;34m,[0m [0m_refit[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m [0msample_weight[0m[0;34m=[0m[0msample_weight[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    269[0m         )
+
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/naive_bayes.py[0m in [0;36m_partial_fit[0;34m(self, X, y, classes, _refit, sample_weight)[0m
+[1;32m    425[0m             [0mself[0m[0;34m.[0m[0mclasses_[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    426[0m [0;34m[0m[0m
+[0;32m--> 427[0;31m         [0mfirst_call[0m [0;34m=[0m [0m_check_partial_fit_first_call[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mclasses[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    428[0m         [0mX[0m[0;34m,[0m [0my[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_validate_data[0m[0;34m([0m[0mX[0m[0;34m,[0m [0my[0m[0;34m,[0m [0mreset[0m[0;34m=[0m[0mfirst_call[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    429[0m         [0;32mif[0m [0msample_weight[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/utils/multiclass.py[0m in [0;36m_check_partial_fit_first_call[0;34m(clf, classes)[0m
+[1;32m    418[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    419[0m             [0;31m# This is the first call to partial_fit[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 420[0;31m             [0mclf[0m[0;34m.[0m[0mclasses_[0m [0;34m=[0m [0munique_labels[0m[0;34m([0m[0mclasses[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    421[0m             [0;32mreturn[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    422[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.10/dist-packages/sklearn/utils/multiclass.py[0m in [0;36munique_labels[0;34m(*ys)[0m
+[1;32m    105[0m     [0m_unique_labels[0m [0;34m=[0m [0m_FN_UNIQUE_LABELS[0m[0;34m.[0m[0mget[0m[0;34m([0m[0mlabel_type[0m[0;34m,[0m [0;32mNone[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    106[0m     [0;32mif[0m [0;32mnot[0m [0m_unique_labels[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 107[0;31m         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Unknown label type: %s"[0m [0;34m%[0m [0mrepr[0m[0;34m([0m[0mys[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    108[0m [0;34m[0m[0m
+[1;32m    109[0m     [0;32mif[0m [0mis_array_api[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: Unknown label type: (array([0.        , 0.60930233, 0.61395349, 0.62790698, 0.63255814,
+       0.6372093 , 0.64186047, 0.64651163, 0.65581395, 0.66046512,
+       0.66511628, 0.66976744, 0.6744186 , 0.67906977, 0.68372093,
+       0.68837209, 0.69767442, 0.70232558, 0.70697674, 0.71162791,
+       0.7255814 , 0.73023256, 0.73488372, 0.73953488, 0.74418605,
+       0.74883721, 0.75348837, 0.75813953, 0.7627907 , 0.76744186,
+       0.77209302, 0.77674419, 0.78139535, 0.78604651, 0.79069767,
+       0.79534884, 0.8       , 0.80465116, 0.81395349, 0.82325581,
+       0.82790698, 0.83255814, 0.8372093 , 0.84186047, 0.84651163,
+       0.85116279, 0.85581395, 0.86046512, 0.86511628, 0.86976744,
+       0.8744186 , 0.87906977, 0.88372093, 0.88837209, 0.89302326,
+       0.89767442, 0.90232558, 0.90697674, 0.91627907, 0.92093023,
+       0.9255814 , 0.93023256, 0.93953488, 0.94418605, 0.95348837,
+       0.95813953, 0.9627907 , 0.96744186, 0.98139535, 0.98604651,
+       1.        ]),)
+
